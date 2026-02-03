@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elengi Premium | Restaurant Congolais</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="texture-overlay"></div>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>DÉGUSTEZ À DOMICILE <br><span>NOS PLATS D'EXCEPTION</span></h1>
+            <p>Le goût authentique du Congo livré chez vous avec élégance.</p>
+            <div class="hero-btns">
+                <a href="#menu" class="btn-primary">COMMENCER MAINTENANT</a>
+                <a href="#" class="btn-secondary">VOIR LE MENU</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="payment-bar">
+        <span>PAIEMENT SÉCURISÉ :</span>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/M-Pesa_logo.png" alt="M-Pesa">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Airtel_logo.png" alt="Airtel">
+        <img src="https://upload.wikimedia.org/wikipedia/orange-money-logo.png" alt="Orange">
+    </div>
+
+    <main class="main-container">
+        <section id="menu" class="menu-section">
+            <div class="tabs">
+                <button class="tab-btn active">Entrées</button>
+                <button class="tab-btn">Plats</button>
+                <button class="tab-btn">Desserts</button>
+                <button class="tab-btn">Boissons</button>
+            </div>
+
+            <div class="product-list">
+                <div class="product-card">
+                    <img src="./img/poulet mayo.jpeg" alt="Poulet Mayo">
+                    <div class="product-info">
+                        <h3>Poulet Mayo Classique</h3>
+                        <p>Grillé au charbon, servi avec sa mayo maison.</p>
+                        <button class="btn-add" onclick="addToCart('Poulet Mayo', 25000)">Commander</button>
+                    </div>
+                    <div class="price">25.000 FC</div>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/100x100" alt="Ntaba">
+                    <div class="product-info">
+                        <h3>Ntaba (Chèvre) Spécial</h3>
+                        <p>Morceaux de chèvre fumés, épices du pays.</p>
+                        <button class="btn-add" onclick="addToCart('Ntaba Spécial', 35000)">Commander</button>
+                    </div>
+                    <div class="price">35.000 FC</div>
+                </div>
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/100x100" alt="Ntaba">
+                    <div class="product-info">
+                        <h3>Ntaba (Chèvre) Spécial</h3>
+                        <p>Morceaux de chèvre fumés, épices du pays.</p>
+                        <button class="btn-add" onclick="addToCart('Ntaba Spécial', 35000)">Commander</button>
+                    </div>
+                    <div class="price">35.000 FC</div>
+                </div>
+            </div>
+        </section>
+
+        <aside class="cart-sidebar">
+            <h3>Total - votre commande</h3>
+            <div id="cart-items">
+                <p style="color:#888;">Votre panier est vide.</p>
+            </div>
+            <hr>
+            <div class="total-line">
+                <span>Sous-total</span>
+                <span id="total-price">0 FC</span>
+            </div>
+            <button class="btn-pay" onclick="sendToWhatsApp()">PASSER LA COMMANDE</button>
+            <p class="footer-note">Paiement via M-Pesa / Airtel Money après confirmation.</p>
+        </aside>
+    </main>
+
+    <a href="#" class="whatsapp-float">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
