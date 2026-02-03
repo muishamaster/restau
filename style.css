@@ -1,94 +1,106 @@
 :root {
-    --gold-gradient: linear-gradient(135deg, #c5a059 0%, #8e6d31 100%);
-    --dark-bg: #120f0d;
-    --card-bg: rgba(30, 26, 22, 0.95);
-    --gold-text: #d4af37;
+    --gold: #c5a059;
+    --dark-bg: #1a1612;
+    --card-bg: rgba(40, 34, 28, 0.8);
+    --text-light: #e0d5c5;
 }
 
 body {
-    background: var(--dark-bg);
-    background-image: url('https://www.transparenttextures.com/patterns/dark-wood.png');
-    color: #e0d5c5;
+    background-color: var(--dark-bg);
+    color: var(--text-light);
     font-family: 'Poppins', sans-serif;
     margin: 0;
+    background-image: url('https://www.transparenttextures.com/patterns/dark-wood.png');
 }
 
-/* Bouton Style Image */
-.btn-premium {
-    background: var(--gold-gradient);
-    color: #fff;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 5px;
-    font-weight: 600;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
-    text-decoration: none;
-    display: inline-block;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+/* Hero Section */
+.hero {
+    height: 60vh;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3), var(--dark-bg)), url('restaurant-bg.jpg');
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
-.btn-premium:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(197, 160, 89, 0.4);
+h1 { font-family: 'Playfair Display', serif; font-size: 3rem; }
+h1 span { color: var(--gold); }
+
+/* Payment Bar */
+.payment-bar {
+    background: rgba(0,0,0,0.5);
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    border-bottom: 1px solid var(--gold);
 }
 
-.btn-action {
-    background: rgba(197, 160, 89, 0.1);
-    border: 1px solid var(--gold-text);
-    color: var(--gold-text);
-    padding: 8px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-}
+.payment-bar img { height: 25px; opacity: 0.8; }
 
-.btn-action:hover { background: var(--gold-gradient); color: white; }
-
-/* Responsive Grid */
+/* Layout */
 .main-container {
     display: flex;
-    flex-wrap: wrap; /* Permet d'empiler sur mobile */
     max-width: 1200px;
-    margin: auto;
-    gap: 20px;
-    padding: 15px;
-}
-
-.menu-section { flex: 1 1 600px; }
-.cart-sidebar { 
-    flex: 1 1 300px; 
-    background: var(--card-bg);
+    margin: 40px auto;
+    gap: 30px;
     padding: 20px;
-    border-radius: 8px;
-    border: 1px solid #332b24;
 }
 
-/* Design des Cartes Produits */
+.menu-section { flex: 2; }
+.cart-sidebar { 
+    flex: 1; 
+    background: var(--card-bg); 
+    padding: 25px; 
+    border-radius: 15px;
+    border: 1px solid rgba(197, 160, 89, 0.2);
+    height: fit-content;
+}
+
+/* Product Cards */
 .product-card {
+    background: rgba(255,255,255,0.05);
     display: flex;
-    background: rgba(255,255,255,0.03);
-    margin-bottom: 15px;
-    padding: 15px;
-    border-radius: 10px;
     align-items: center;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    transition: 0.3s;
 }
 
-.product-card img {
-    width: 90px;
-    height: 90px;
+.product-card:hover { background: rgba(255,255,255,0.1); border-left: 4px solid var(--gold); }
+
+.product-card img { border-radius: 8px; margin-right: 20px; width: 80px; height: 80px; object-fit: cover; }
+
+.price { color: var(--gold); font-weight: bold; font-size: 1.2rem; margin-left: auto; }
+
+/* Buttons */
+.btn-add {
+    background: var(--gold);
+    border: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn-pay {
+    width: 100%;
+    background: var(--gold);
+    color: white;
+    border: none;
+    padding: 15px;
     border-radius: 8px;
-    object-fit: cover;
-    margin-right: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
 }
 
-.price { color: var(--gold-text); font-weight: bold; font-size: 1.2rem; }
-
-/* Media Queries pour Mobile */
-@media (max-width: 768px) {
-    h1 { font-size: 1.8rem; }
-    .product-card { flex-direction: column; text-align: center; }
-    .product-card img { margin: 0 0 10px 0; width: 100%; height: 150px; }
-    .price { margin-top: 10px; }
-    .payment-bar { flex-direction: column; gap: 10px; }
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
 }
