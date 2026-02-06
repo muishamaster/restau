@@ -3,17 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beni BK | Restaurant Premium Congolais</title>
+    <title>Entrées - BENI BK</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <!-- Intégration QR Code Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Texture de fond premium -->
     <div class="texture-overlay"></div>
 
-    <!-- Navigation principale -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">
@@ -21,7 +18,7 @@
                 <p>Premium Congolais</p>
             </div>
             <ul class="nav-links">
-                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="index.html">Accueil</a></li>
                 <li><a href="menu.html">Menu</a></li>
                 <li><a href="#about">À propos</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -39,54 +36,15 @@
         </div>
     </nav>
 
-    <!-- Section Hero Premium -->
-    <header class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1 class="hero-title">
-                SAVEURS D'EXCEPTION
-                <span class="hero-subtitle">Du Congo à Votre Table</span>
-            </h1>
-            <p class="hero-description">Cuisine authentique, préparation minutieuse, livraison sécurisée.</p>
-            <div class="hero-btns">
-                <button class="btn-cta btn-cta-primary" data-target="menu.html">DÉCOUVRIR LE MENU</button>
-                <button class="btn-cta btn-cta-secondary" data-target="#menu">COMMANDER MAINTENANT</button>
-            </div>
-        </div>
-    </header>
-
-    <!-- Barre de paiement sécurisé -->
-    <div class="payment-bar">
-        <div class="payment-content">
-            <span class="payment-label">PAIEMENTS SÉCURISÉS</span>
-            <div class="payment-methods">
-                <div class="payment-method">
-                    <div class="payment-icon mpesa"></div>
-                    <span>M-Pesa</span>
-                </div>
-                <div class="payment-method">
-                    <div class="payment-icon airtel"></div>
-                    <span>Airtel Money</span>
-                </div>
-                <div class="payment-method">
-                    <div class="payment-icon orange"></div>
-                    <span>Orange Money</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <main class="main-container">
-        <!-- Section Menu -->
         <section id="menu" class="menu-section">
             <div class="menu-header">
-                <h2>Notre Menu</h2>
-                <p>Sélectionnez vos mets favoris</p>
+                <h2>🥘 Entrées</h2>
+                <p>Savourez nos délicieuses entrées pour débuter votre repas</p>
             </div>
 
-            <!-- Système d'onglets de catégories -->
             <div class="category-tabs">
-                <a href="entrees.html" class="category-btn" data-category="entrees">
+                <a href="entrees.html" class="category-btn active" data-category="entrees">
                     <span class="icon">🥘</span> Entrées
                 </a>
                 <a href="plats.html" class="category-btn" data-category="plats">
@@ -100,13 +58,9 @@
                 </a>
             </div>
 
-            <!-- Affichage des produits -->
-            <div class="product-list" id="productList">
-                <!-- Produits chargés dynamiquement -->
-            </div>
+            <div class="product-list" id="productList"></div>
         </section>
 
-        <!-- Sidebar Panier -->
         <aside class="cart-sidebar" id="cartSidebar">
             <div class="cart-header">
                 <h3>Votre Commande</h3>
@@ -121,7 +75,6 @@
 
             <hr class="divider">
 
-            <!-- Résumé des totaux -->
             <div class="cart-summary">
                 <div class="summary-line">
                     <span>Sous-total</span>
@@ -137,7 +90,6 @@
                 </div>
             </div>
 
-            <!-- Boutons d'action -->
             <div class="cart-actions">
                 <button class="btn-pay" id="paymentBtn" onclick="cartManager.openPaymentModal()">PASSER LA COMMANDE</button>
                 <button class="btn-whatsapp" onclick="cartManager.sendToWhatsApp()">
@@ -147,7 +99,6 @@
 
             <p class="footer-note">Paiement sécurisé via Mobile Money</p>
 
-            <!-- Section QR Code -->
             <div class="qr-code-section">
                 <button class="btn-qr-toggle" onclick="toggleQRCode()">
                     📱 Afficher QR Code Menu
@@ -157,7 +108,6 @@
         </aside>
     </main>
 
-    <!-- Modal de Paiement Mobile Money -->
     <div class="modal" id="paymentModal">
         <div class="modal-content payment-modal">
             <button class="modal-close" onclick="cartManager.closePaymentModal()">✕</button>
@@ -188,14 +138,18 @@
         </div>
     </div>
 
-    <!-- Floating Action Button WhatsApp -->
     <a href="#" class="whatsapp-float" id="whatsappFloat" title="Contactez-nous sur WhatsApp">
         <svg viewBox="0 0 24 24" width="24" height="24" fill="white">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-5.031 1.378c-3.055 2.364-3.905 6.75-1.897 10.391 1.672 2.904 5.291 3.118 8.632 3.118h.46a9.75 9.75 0 003.464-.6l3.585 1.241a.18.18 0 00.248-.204l-1.081-3.930a9.8 9.8 0 001.175-5.621c-.001-5.487-4.144-9.95-9.451-9.95"></path>
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-5.031 1.378c-3.055 2.364-3.905 6.75-1.897 10.391 1.672 2.904 5.291 3.118 8.632 3.118h.46a9.75 9.75 0 003.464-.6l3.585 1.241a.18.18 0 00.248-.204l-1.081-3.93a9.8 9.8 0 001.175-5.621c-.001-5.487-4.144-9.95-9.451-9.95"></path>
         </svg>
     </a>
 
-    <!-- Script principal -->
     <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            cartManager.init();
+            productManager.loadProducts('entrees');
+        });
+    </script>
 </body>
 </html>
